@@ -10,17 +10,17 @@ Lets allow anyone to comment and like.
 1. Main Page:
    - Shows top-ranked papers.
    - Allows interaction (view, vote) without logging in.
-	- Requires login for commenting and saving posts.
+	- Requires login for commenting and saving posts (v2)
 2.	Paper Details Page:
   - Shows paper details and comments. 
   - Allows interaction (view, vote) without logging in.
 	- Requires login for commenting and saving posts.
-3.	User Authentication:
+3.	User Authentication (v2):
 	- Sign up, log in, and manage user profiles.
 4.	Voting System:
 	- Anyone can vote on papers.
 5.	Commenting System:
-	- Only logged-in users can comment on papers.
+	- Only logged-in users can comment on papers (v2) - v1 will allow non-logged in users to comment
 6.	Search Functionality:
 	- Search for papers on arxiv
 7.	User-Specific Features:
@@ -29,10 +29,10 @@ Lets allow anyone to comment and like.
 
 
 ## Backend
-Based on FastAPI
+`FastAPI`
 
 ### Endpoints
-**User Authentication:**
+**User Authentication (v2):**
 - POST /register: Register a new user.
 - POST /login: Log in a user.
 - GET /profile: Get user profile.
