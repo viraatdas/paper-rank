@@ -1,6 +1,11 @@
 # Paper Rank
 Hackerrank for research papers
 
+<p align="center">
+  <img src="logo.png" alt="Logo">
+</p>
+
+
 ## High-Level Design
 
 For now, lets not worry about authentication. 
