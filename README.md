@@ -2,7 +2,7 @@
 Hackerrank for research papers
 
 <p align="center">
-  <img src="logo.png" alt="Logo">
+  <img src="logo.png" alt="Logo" width="50%">
 </p>
 
 
