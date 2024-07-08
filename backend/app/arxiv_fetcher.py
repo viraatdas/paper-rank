@@ -9,7 +9,7 @@ def fetch_papers(query, max_results=10):
         'max_results': max_results
     }
     query_url = base_url + urlencode(query_params, quote_via=quote)
-    
+
     feed = feedparser.parse(query_url)
     papers = []
 
@@ -24,6 +24,7 @@ def fetch_papers(query, max_results=10):
         papers.append(paper)
 
     return papers
+
 
 # Example usage
 papers = fetch_papers('machine learning', max_results=10)
