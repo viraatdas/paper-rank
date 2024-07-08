@@ -1,19 +1,36 @@
 from fastapi import FastAPI, Depends, HTTPException
 from sqlalchemy.orm import Session
+from dotenv import load_dotenv
+import os
 from . import crud, models, schemas, arxiv_fetcher
 from .database import SessionLocal, engine
 
+# Load environment variables from a .env file if it exists
+load_dotenv()
+
+# Determine the mode
+debug_mode = os.getenv('DEBUG', 'False').lower() in ('true', '1', 't')
+
+if debug_mode:
+    print("Running in Debug Mode")
+else:
+    print("Running in Production Mode")
+
+# Create the database tables
 models.Base.metadata.create_all(bind=engine)
 
+# Initialize FastAPI app
 app = FastAPI()
 
-# Dependency
+# Dependency to get the database session
 def get_db():
     db = SessionLocal()
     try:
         yield db
     finally:
         db.close()
+
+# CRUD operations as endpoints
 
 @app.post("/papers/", response_model=schemas.Paper)
 def create_paper(paper: schemas.PaperCreate, db: Session = Depends(get_db)):
